@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1=post.title
+	div=post.body
+	br
+	a(href='/')='Geri'
+	hr
+	h3='Yorumlar'
+	ul
+	each comment in comments
+		li=comment.body
+	hr
+	div
+		h3='Yorum yap'
+		form(method='post')
+			textarea(name='comment')
+			br
+			input(type='submit',value='Gönder')
