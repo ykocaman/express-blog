@@ -2,6 +2,9 @@ var db = require('./../singletons/db');
 
 class BaseRepository {
 	constructor(){
+        if (this.constructor === BaseRepository) {
+            throw new TypeError('Abstract class');
+        }
 		this.db = db.getInstance();
 	}
 

@@ -1,5 +1,11 @@
 
 class Base{
+	constructor(){
+        if (this.constructor === Base) {
+            throw new TypeError('Abstract class');
+        }
+	}
+
 	all (){
 		return this.repository.all()
 	}
